@@ -64,23 +64,28 @@
         }
         // No need to change anything ABOVE this line ^
 
+        // Change 1: Create opening and closing fragments
+        // Change 2: button onClick has no argument for props, added "drawCard"
+        // Change 3: Apply camel case to "onClick" property
         return (
-          <h1>Draw a Card</h1>
-          <button onClick={}>
-            Click to Draw a Card
-          </button>
-          <button onclick={shuffle}>
-            Return Cards and Shuffle Deck
-          </button>
-          <div style={handStyles}>
-            {hand.map((card, index) => {
-              return (
-                <div style={cardStyles} key={index}>
-                  {card}
-                </div>
-              )
-            })}
-          </div>
+          <>
+            <h1>Draw a Card</h1>
+            <button onClick={drawCard}>
+              Click to Draw a Card
+            </button>
+            <button onClick={shuffle}>
+              Return Cards and Shuffle Deck
+            </button>
+            <div style={handStyles}>
+              {hand.map((card, index) => {
+                return (
+                  <div style={cardStyles} key={index}>
+                    {card}
+                  </div>
+                )
+              })}
+            </div>
+          </>
         )
       }
 
