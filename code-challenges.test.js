@@ -48,15 +48,21 @@ describe ("fibonacciSequence", () => {
 // Tests:       1 passed, 1 total
 
 // b) Create the function that makes the test pass.
-// Create a function that takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.
 
+// Create a function that takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.
 const fibonacciSequence = (num1) => {
 
+  // Create a starting array with initial values as shown in example
   const arrayFib = [1,1]
-  // This was hard
+
+  // Run a loop that populates the starting array
   for ( let i = 1 ; i < num1-1 ; i++ ) {
+    
+    // Use push on starting array with the fibonacci sequence
     arrayFib.push(arrayFib[i]+arrayFib[i-1])
   }
+
+  // Return the starting array with populated fibonacci sequence
   return arrayFib
 }
 
@@ -129,8 +135,6 @@ const output2 = [250, 161, 261, 165]
 const accountTransactions3 = []
 const output3 = []
 
-
-
 expect(arraySums(accountTransactions1)).toEqual(output1)
 expect(arraySums(accountTransactions2)).toEqual(output2)
 expect(arraySums(accountTransactions3)).toEqual(output3)
@@ -146,15 +150,20 @@ expect(arraySums(accountTransactions3)).toEqual(output3)
 // Test Suites: 1 passed, 1 total
 // Tests:       1 passed, 1 total
 
+// Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 const arraySums = (array1) => {
 
   // Check for an empty array
   if (array1[0]==null){
+    // Return array if empty
     return array1
   }
-  // If array not empty
+
+  // If array is not empty
   else {
+    // Start a counter variable for the sum
     let sum = 0
+    // Update the sum and return the sum
     return array1.map((val)=>{
       sum += val
       return sum
